@@ -1,0 +1,6 @@
+.idea
+__pycache__
+data
+resources/models/
+resources/models (deprecated)/
+output.avi
