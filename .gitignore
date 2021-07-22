@@ -2,5 +2,6 @@
 __pycache__
 data
 resources/models/
-resources/models (deprecated)/
 output.avi
+.ipynb_checkpoints/
+*.egg-info/
