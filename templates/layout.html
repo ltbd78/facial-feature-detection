@@ -36,20 +36,13 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Features</h3>
-            <p class='text-muted'>You can try the following features
+            <h3>Sidebar</h3>
+            <p class='text-muted'>Pick a Resolution
               <ul class="list-group">
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='attractive') }}">Attractive</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='bags_under_eyes') }}">Bags Under Eyes</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='bangs') }}">Bangs</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='chubby') }}">Chubby</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='eyeglasses') }}">Eyeglasses</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='male') }}">Male</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='mouth_slightly_open') }}">Mouth Slightly Open</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='mustache') }}">Mustache</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='smiling') }}">Smiling</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='wearing_lipstick') }}">Wearing Lipstick</a>
-                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', feature='young') }}">Young</a>
+                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', resolution=1080) }}">1080p</a>
+                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', resolution=720) }}">720p</a>
+                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', resolution=480) }}">480p</a>
+                <a class="list-group-item list-group-item-light" href="{{ url_for('detect', resolution=360) }}">360p</a>
               </ul>
             </p>
           </div>
