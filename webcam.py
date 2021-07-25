@@ -1,13 +1,14 @@
 import cv2
-from fastai.vision import *
-from fastai.vision.image import pil2tensor, Image
+
+from core.models import*
+from core.networks import *
+from core.utils import *
 
 
-class WebCam(object):
-    def __init__(self, Feature, learner_path, cascade_path, tolerance):
-        self.Feature = Feature
-        self.learn = load_learner(learner_path.rsplit('\\', 1)[0], learner_path.split('\\')[-1])
-        self.cascade = cv2.CascadeClassifier(cascade_path)
+class WebCam:
+    def __init__(self, path_model, path_fc, tolerance):
+        
+        self.cascade = cv2.CascadeClassifier(path_fc)
         self.tolerance = tolerance
 
     def feed(self):

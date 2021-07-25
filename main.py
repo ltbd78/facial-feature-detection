@@ -17,7 +17,7 @@ resnet_model_no = 34
 
 
 # network_cae = ConvAutoencoder(cae_latent_dim, *x_shape, stride=cae_stride).to(device)
-network_resnet = ResNet(34, len(features), in_channels=3).to(device)
+network_resnet = ResNet(resnet_model_no, len(features), in_channels=3).to(device)
 
 # model_cae = ModelCAE(network_cae)
 model_cls = ModelSigmoidClassifier(network_resnet)
