@@ -6,7 +6,7 @@ from core.utils import *
 
 
 dir_load = './resources/models/'
-path_fc = './resources/haarcascade_frontalface_default.xml'
+path_cascade = './resources/haarcascade_frontalface_default.xml'
 features = ['Attractive', 'Bags_Under_Eyes', 'Bangs', 'Chubby', 'Eyeglasses', 'Male', 'Mouth_Slightly_Open', 'Mustache', 'Smiling', 'Wearing_Lipstick', 'Young']
 
 device = torch.device('cpu')
@@ -28,7 +28,7 @@ model_cls.load(dir_load + 'cls.pth')
 transforms = T.Compose([
     T.Resize(size=(224, 224))])
 
-fc = cv2.CascadeClassifier(path_fc)
+cascade = cv2.CascadeClassifier(path_cascade)
 cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 resolution = (1280, 720)
@@ -38,7 +38,7 @@ out = cv2.VideoWriter('./demo/output.avi', fourcc, fps, resolution)
 while True:
     ret, frame = cap.read()
     frame = cv2.resize(frame, resolution)
-    coords = get_coords(frame, fc, 10, multi=True)
+    coords = get_coords(frame, cascade, 10, multi=True)
 
     if coords is not None:
         # BATCH PREPROCESSING
