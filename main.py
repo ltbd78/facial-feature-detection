@@ -22,8 +22,8 @@ network_resnet = ResNet(resnet_model_no, len(features), in_channels=3).to(device
 # model_cae = ModelCAE(network_cae)
 model_cls = ModelSigmoidClassifier(network_resnet)
 
-# model_cae.load(dir_load + 'cae.pth')
-model_cls.load(dir_load + 'cls.pth')
+# model_cae.load(dir_load + 'cae.pth', map_location=device)
+model_cls.load(dir_load + 'cls.pth', map_location=device)
 
 transforms = T.Compose([
     T.Resize(size=(224, 224))])

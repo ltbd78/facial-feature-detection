@@ -15,7 +15,7 @@ class WebCam:
         self.device = torch.device('cpu')
         network_resnet = ResNet(34, len(features), in_channels=3).to(self.device)
         self.model_cls = ModelSigmoidClassifier(network_resnet)
-        self.model_cls.load(path_model)
+        self.model_cls.load(path_model, map_location=self.device)
         self.transforms = T.Compose([
             T.Resize(size=(224, 224))])
         self.cascade = cv2.CascadeClassifier(path_cascade)

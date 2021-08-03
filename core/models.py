@@ -16,8 +16,8 @@ class Model:
     def eval(self, *args, **kwargs):
         raise NotImplementedError
     
-    def load(self, path):
-        checkpoint = torch.load(path)
+    def load(self, path, map_location=None):
+        checkpoint = torch.load(path, map_location=map_location)
         self.network.load_state_dict(checkpoint['network'])
         self.optim.load_state_dict(checkpoint['optim'])
         self.loss_history = checkpoint['loss_history']
